@@ -7,3 +7,5 @@ node_modules
 
 docs
 build
+redis_data
+redis_dump

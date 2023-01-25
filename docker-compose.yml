@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  server:
+    build: .
+    environment:
+      db: redis://redis:6379/0
+      port: 8080
+    ports:
+      - 8080:8080
+    container_name: counter-api-server
+    restart: always
+    working_dir: /usr/src/app
+  redis:
+    image: 'redis:alpine'
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - ./redis_data:/data
+      - ./redis_dump:/var/lib/redis

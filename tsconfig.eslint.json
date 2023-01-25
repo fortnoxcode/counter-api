@@ -5,7 +5,10 @@
     ".eslintrc"
   ],
   "compilerOptions": {
+    "module": "ES2022",
+    "target": "ES2022",
     "declaration": true,
-    "outDir": "./build"
+    "outDir": "./build",
+    "moduleResolution": "node"
   }
 }
